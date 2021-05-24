@@ -1,0 +1,54 @@
+{% load static %}
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <meta http-equiv='X-UA-Compatible' content="IE=edge">
+        <title>registration</title>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+        <link rel="stylesheet" type="text/css" href ="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="{% static 'styles/event_register.css' %}">
+
+    </head>
+    <body>
+
+        <div class="container">
+          
+            <form action="" class="" method="POST">
+                {% csrf_token %}
+          
+              <label>Event Title</label>
+              <input type="text"  name="title" placeholder="Event Title">
+          
+              <label >Organizer</label>
+              <input type="text"  name="organizer" placeholder="Organizer">
+          
+              <label for="Type">Type</label>
+              <select name="Type">
+                <option value="australia">Australia</option>
+                <option value="canada">Canada</option>
+                <option value="usa">USA</option>
+              </select>
+              <label for="Category">Category</label>
+              <select  name="category">
+                <option value="australia">IT</option>
+                <option value="canada">Arts</option>
+                <option value="usa">webinar</option>
+              </select>
+              <label>Venue</label>
+              <input type="text" name="location" placeholder="Venue">
+              <label for="fname">Date</label>
+              <input type="date"  name="date" placeholder="Date">
+              <label for="fname">Time</label>
+              <input type="time"  name="time" placeholder="Time"><br><br>
+              <label for="fname">Poster upload</label><br>
+              <input type="file" id="myFile" name="poster"><br><br>
+              <button type="submit" class="btn btn-primary btn-block">Register Event</button>
+              
+          
+          
+             
+            </form>
+          </div> 
+    </body>
