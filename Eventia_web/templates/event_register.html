@@ -15,7 +15,7 @@
 
         <div class="container">
           
-            <form action="" class="" method="POST">
+            <form action="" method="POST" enctype="multipart/form-data">
                 {% csrf_token %}
           
               <label>Event Title</label>
@@ -43,7 +43,7 @@
               <label for="fname">Time</label>
               <input type="time"  name="time" placeholder="Time"><br><br>
               <label for="fname">Poster upload</label><br>
-              <input type="file" id="myFile" name="poster"><br><br>
+              <input type="file" id="avatar" name="avatar"><br><br>
               <button type="submit" class="btn btn-primary btn-block">Register Event</button>
               
           

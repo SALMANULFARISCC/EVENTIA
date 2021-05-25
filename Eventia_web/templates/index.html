@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Travello</title>
+<title>Eventia</title>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="description" content="Travello template project">
@@ -61,30 +61,6 @@
 
 	
 
-
-
-	<!-- Menu -->
-<!-- 
-	<div class="menu">
-		<div class="menu_header d-flex flex-row align-items-center justify-content-start">
-			<div class="menu_logo"><a href="index.html">Eventia</a></div>
-			<div class="menu_close_container ml-auto"><div class="menu_close"><div></div><div></div></div></div>
-		</div>
-		<div class="menu_content">
-			<ul>
-				<li><a href="#">Events</a></li>
-									
-				{%if user.is_authenticated %}
-				<li> Hello, {{user.last_name}}</li>
-				<li><a href="">Create Event</a></li>
-				<li><a href="accounts/logout">Logout</a></li>
-				{% else %}
-
-				<li><a href="accounts/register">Register</a></li>
-				<li><a href="accounts/login">Login</a></li>
-				{% endif %}
-			
-			</ul> -->
 			
 			<div id="carouselExampleCaptions" class="carousel slide" data-mdb-ride="carousel">
 				<div class="carousel-indicators">
@@ -185,16 +161,19 @@
 						<!-- Destination -->
 						<div class="destination item">
 							<div class="destination_image">
-								<img src="{{event.poster.url}}" alt="">
-								
+								{% if event.poster %}
+								<img src="{{ event.poster.url }}" alt="">
+								{% else %}
+								<img src="/media/pics/default.jpg" alt="">
+								{% endif %}
 							</div>
 							<div class="destination_content">
-								<div class="destination_title"><a href="destinations.html">{{event.title}}</a>
+								<div class="destination_title"><a>{{event.title}}</a>
 								</div>
 								<div class="destination_subtitle">
 									<p>{{dest.desc}}</p>
 								</div>
-								<div class="destination_price">From ${{event.date}}</div>
+								<div class="destination_price">{{event.date}}</div>
 								<a class="btn btn-primary" href="events/register_for_event">Register</a>
 							</div>
 						</div>

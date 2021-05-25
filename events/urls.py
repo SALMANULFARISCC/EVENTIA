@@ -2,6 +2,7 @@ from django.urls import path
 
 
 from . import views 
+from Eventia_web.urls import urlpatterns
 
 
 urlpatterns = [
