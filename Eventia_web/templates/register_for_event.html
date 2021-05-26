@@ -23,6 +23,7 @@
                     <form  method='POST'>
                         <!-- to error: add class "has-danger" -->
                         {% csrf_token %}
+                        <h1>{{ event.title }}</h1>
                         <div class="form-group">
                             <label for="exampleInputEmail1">First Name</label>
                             <input  class="form-control form-control-sm" name="first_name" >
